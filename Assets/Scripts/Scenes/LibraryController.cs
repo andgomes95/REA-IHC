@@ -16,4 +16,13 @@ public class LibraryController : MonoBehaviour {
 	public void backToMainMenu(){
 		SceneManager.LoadScene ("MainMenu");
 	}
+	public void characterLibrary(){
+		SceneManager.LoadScene ("CharacterLibrary");
+	}
+	public void monsterLibrary(){
+		SceneManager.LoadScene ("MonsterLibrary");
+	}
+	public void learnMoreLibrary(){
+		SceneManager.LoadScene ("LearnMoreLibrary");
+	}
 }

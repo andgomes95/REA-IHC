@@ -57,6 +57,9 @@
      <Compile Include="Assets\Scripts\Scenes\GamePlay\CharBase.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\GamePlayController.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\PlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Library\CharacterLibraryController.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Library\LearnMoreLibraryController.cs" />
+     <Compile Include="Assets\Scripts\Scenes\Library\MonsterLibraryController.cs" />
      <Compile Include="Assets\Scripts\Scenes\LibraryController.cs" />
      <Compile Include="Assets\Scripts\Scenes\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Scenes\PhaseSelect.cs" />

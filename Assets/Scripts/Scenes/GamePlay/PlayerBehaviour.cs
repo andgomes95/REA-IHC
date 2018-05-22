@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerBehaviour : CharBase {
-
 	// Use this for initialization
 	void Start () {
 		base.Start();

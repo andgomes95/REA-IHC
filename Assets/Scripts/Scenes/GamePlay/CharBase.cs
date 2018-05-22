@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public abstract class CharBase : MonoBehaviour {
 	public int totalLife;
+	public string namePlayer;
 	private int currentLife;
 	public int totalMana;
 	private int currentMana;
@@ -15,6 +16,7 @@ public abstract class CharBase : MonoBehaviour {
 
 	// Use this for initialization
 	protected void Start () {
+		namePlayer = "";
 		currentLife = totalLife;
 		currentMana = totalMana;
 		lifeSlider.maxValue = totalLife;

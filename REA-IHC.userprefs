@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Scenes/PlayerSelect.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Scenes/PlayerSelect.cs" Line="25" Column="26" />
+      <File FileName="Assets/Scripts/ApplicationController.cs" Line="10" Column="4" />
+      <File FileName="Assets/Scripts/Scenes/GamePlay/CharBase.cs" Line="19" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

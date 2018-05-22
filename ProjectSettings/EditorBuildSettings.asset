@@ -18,5 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Library.unity
     guid: 6fed93b4695704f479c23c3d657c73cd
   - enabled: 1
+    path: Assets/Scenes/Library/CharacterLibrary.unity
+    guid: 6bdc473b959cb4aa8ba2c576a3d03d06
+  - enabled: 1
+    path: Assets/Scenes/Library/MonsterLibrary.unity
+    guid: 6f3d2c9bb8abe4297971f947e561914a
+  - enabled: 1
+    path: Assets/Scenes/Library/LearnMoreLibrary.unity
+    guid: 116d1b74a5e6a4c3d85fe50145e53d56
+  - enabled: 1
     path: Assets/Scenes/GamePlay/Phase01.unity
     guid: a3253fe4e173e486f9a4c6278b5b6f95
