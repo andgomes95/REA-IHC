@@ -54,7 +54,9 @@
      <Compile Include="Assets\Scripts\ApplicationController.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\Attack\AttackBase.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\Attack\AttackOrb.cs" />
+     <Compile Include="Assets\Scripts\Scenes\GamePlay\Attack\AttackSen.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\CharBase.cs" />
+     <Compile Include="Assets\Scripts\Scenes\GamePlay\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\GamePlayController.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\Scenes\Library\CharacterLibraryController.cs" />

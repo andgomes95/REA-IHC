@@ -11,5 +11,7 @@ public class ApplicationController : MonoBehaviour {
 	public static void SetLevel(int level){
 		currentLevel = level;
 	}
-
+	public static int GetLevel(){
+		return currentLevel;
+	}
 }

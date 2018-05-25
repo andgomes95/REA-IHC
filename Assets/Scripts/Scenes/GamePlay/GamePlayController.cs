@@ -27,11 +27,14 @@ public class GamePlayController : MonoBehaviour {
 	//General
 	public PlayerBehaviour player;
 	private AttackBase selectedAttack;
+	private int countTurn;
 
 	//UI
+	public GameObject battleUI;
 	public GameObject preBattleUI;
 	public GameObject attackSelectUI;
 	public GameObject defenseSelectUI;
+	public GameObject selectedPlayerPanel;
 
 	//AttackInfo
 	public Dropdown attackList;
@@ -70,6 +73,7 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.WAITING:
 			break;
 		case BattleState.YOUR_TURN:
+			yourTurn ();
 			break;
 		case BattleState.ANIMATION_ATTACK:
 			break;
@@ -82,6 +86,7 @@ public class GamePlayController : MonoBehaviour {
 	}
 	public void StartBattle(){
 		ChangeGameState (GameState.BATTLE);
+		ChangeBattleState (BattleState.YOUR_TURN);
 	}
 
 	public void ChangeGameState(GameState newState){
@@ -90,8 +95,10 @@ public class GamePlayController : MonoBehaviour {
 		case GameState.PRE_BATTLE:
 			break;
 		case GameState.BATTLE:
+			countTurn = 0;
 			ChangeBattleState (BattleState.YOUR_TURN);
 			preBattleUI.SetActive (false);
+			battleUI.SetActive (true);
 			break;
 		case GameState.WIN:
 			break;
@@ -106,6 +113,7 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.WAITING:
 			break;
 		case BattleState.YOUR_TURN:
+			yourTurn ();
 			break;
 		case BattleState.ANIMATION_ATTACK:
 			break;
@@ -116,6 +124,9 @@ public class GamePlayController : MonoBehaviour {
 
 
 	//Battle Actions
+	private void yourTurn (){
+		
+	}
 	public void openAttackSelection(){
 		defenseSelectUI.SetActive (false);
 		attackSelectUI.SetActive (true);
@@ -127,15 +138,17 @@ public class GamePlayController : MonoBehaviour {
 		defenseSelectUI.SetActive (true);
 	}
 	public void tryRun(){
-
+		SceneManager.LoadScene ("PlayerSelect");
 	}
 	public void wait(){
 
 	}
 	public void SelectAttack(){
-		selectedAttack = player.attacks [attackList.value];
-		damageValue.text = selectedAttack.damageAttack.ToString();
-		typeValue.text = selectedAttack.typeAttack.ToString ();
-		manaCostValue.text = selectedAttack.manaAttack.ToString ();
+		if (countTurn == 0) {
+			selectedAttack = player.attacks [attackList.value];
+			damageValue.text = selectedAttack.damageAttack.ToString ();
+			typeValue.text = selectedAttack.typeAttack.ToString ();
+			manaCostValue.text = selectedAttack.manaAttack.ToString ();
+		}
 	}
 }

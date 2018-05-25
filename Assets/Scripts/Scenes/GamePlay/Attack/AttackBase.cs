@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public enum TypeAttack{
-	NORMAL,
 	FIRE,
-	WATER,
-	EARTH,
-	WIND,
-	LIGHT,
-	DARK
+	LOGARITMIC,
+	SIMPLE
 }
 public abstract class AttackBase : MonoBehaviour {
 
