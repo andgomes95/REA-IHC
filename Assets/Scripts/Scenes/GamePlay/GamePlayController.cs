@@ -15,6 +15,7 @@ public enum BattleState{
 	ANIMATION_ATTACK,
 	ENEMY_TURN
 }
+	
 
 public class GamePlayController : MonoBehaviour {
 
@@ -25,15 +26,19 @@ public class GamePlayController : MonoBehaviour {
 	private BattleState nextBattleState;
 
 	//General
-	public PlayerBehaviour player;
+	public List<PlayerBehaviour> players;
+	private PlayerBehaviour player;
+	public List<EnemyBehaviour> enemies;
+	private EnemyBehaviour enemy;
 	private AttackBase selectedAttack;
 	private int countTurn;
-
+	public int countAttack;
 	//UI
 	public GameObject battleUI;
 	public GameObject preBattleUI;
 	public GameObject attackSelectUI;
 	public GameObject defenseSelectUI;
+	public Text PlayerName;
 	public GameObject selectedPlayerPanel;
 
 	//AttackInfo
@@ -44,9 +49,11 @@ public class GamePlayController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		countAttack = 0;
+		enemy = enemies [0];
 		ChangeGameState (GameState.PRE_BATTLE);
 		ChangeBattleState (BattleState.WAITING);
-		attackList.options = player.getAttackNames ();
+
 	}
 	
 	// Update is called once per frame
@@ -93,12 +100,15 @@ public class GamePlayController : MonoBehaviour {
 		nextGameState = newState;
 		switch (nextGameState) {
 		case GameState.PRE_BATTLE:
+			preBattleUI.SetActive (true);
+			battleUI.SetActive (false);
+			attackSelectUI.SetActive (false);
 			break;
 		case GameState.BATTLE:
 			countTurn = 0;
-			ChangeBattleState (BattleState.YOUR_TURN);
 			preBattleUI.SetActive (false);
 			battleUI.SetActive (true);
+			ChangeBattleState (BattleState.YOUR_TURN);
 			break;
 		case GameState.WIN:
 			break;
@@ -108,6 +118,7 @@ public class GamePlayController : MonoBehaviour {
 	}
 
 	public void ChangeBattleState(BattleState newState){
+		int value;
 		nextBattleState = newState;
 		switch (nextBattleState) {
 		case BattleState.WAITING:
@@ -116,16 +127,47 @@ public class GamePlayController : MonoBehaviour {
 			yourTurn ();
 			break;
 		case BattleState.ANIMATION_ATTACK:
+			//adicionar player animations
+			value = int.Parse (damageValue.text);
+			enemy.setCurrentLife (enemy.getCurrentLife () - value);
+			enemy.lifeSlider.value = enemy.getCurrentLife ();
+			Debug.Log (countAttack);
+			if (countAttack < 2) {
+				countAttack = countAttack + 1;
+				ChangeBattleState (BattleState.YOUR_TURN);
+			} else {
+				countAttack = 0;
+				ChangeBattleState (BattleState.ENEMY_TURN);
+			}
+
 			break;
 		case BattleState.ENEMY_TURN:
+			enemy = enemies [countAttack];
+			selectedAttack = enemy.attacks [0];
+			player.setCurrentLife (player.getCurrentLife () - int.Parse (selectedAttack.damageAttack.ToString ()));
+			player.lifeSlider.value = player.getCurrentLife ();
+			if (countAttack < 2) {
+				countAttack = countAttack + 1;
+				ChangeBattleState (BattleState.ENEMY_TURN);
+
+			} else {
+				countAttack = 0;
+				ChangeBattleState (BattleState.YOUR_TURN);
+			}
 			break;
 		}
 	}
 
 
 	//Battle Actions
+	public void attackConfirmationClick (){
+		ChangeBattleState (BattleState.ANIMATION_ATTACK);
+	}
 	private void yourTurn (){
-		
+		player = players [countAttack];
+		attackList.options = player.getAttackNames ();
+ 		Debug.Log (player.namePlayer.ToString ());
+		PlayerName.text = player.namePlayer.ToString();
 	}
 	public void openAttackSelection(){
 		defenseSelectUI.SetActive (false);

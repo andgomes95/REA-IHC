@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class CharBase : MonoBehaviour {
 	public int totalLife;
 	public string namePlayer;
-	private int currentLife;
+	public int currentLife;
 	public int totalMana;
 	private int currentMana;
 	public List<AttackBase> attacks;
@@ -27,8 +27,8 @@ public abstract class CharBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//lifeSlider.value = currentLife;
-		//manaSlider.value = currentMana;
+		lifeSlider.value = currentLife;
+		manaSlider.value = currentMana;
 	}
 	public bool haveMana(int manaCoust){
 		if (currentMana >= manaCoust) {
@@ -42,6 +42,15 @@ public abstract class CharBase : MonoBehaviour {
 		if (currentLife <= 0) {
 			charDie ();
 		}
+	}
+	public int getCurrentLife(){
+		return currentLife;
+	}
+	public void setCurrentLife(int life){
+		currentLife = life;
+	}
+	public void changeStatus(){
+
 	}
 	private void charDie(){
 		onDie ();
