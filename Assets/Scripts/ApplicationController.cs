@@ -14,4 +14,25 @@ public class ApplicationController : MonoBehaviour {
 	public static int GetLevel(){
 		return currentLevel;
 	}
+	public static int weakToInt(string weak){
+		if (weak == "Const")
+			return 0;
+		else if (weak == "2x")
+			return 1;
+		return 0;
+	}
+	public static string intToWeak(int num){
+		if (num == 0)
+			return "Const";
+		else if (num == 1)
+			return "2x";
+		return "Const";
+	}
+	public static int attackToInt(string attack){
+		if (attack == "x")
+			return 0;
+		else if (attack == "x^2")
+			return 1;
+		return 0;
+	}
 }

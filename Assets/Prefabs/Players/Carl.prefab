@@ -326,16 +326,12 @@ MonoBehaviour:
   currentLife: 0
   totalMana: 10
   attacks:
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  - {fileID: 114208862985196298, guid: c5d030dd0fb46440a923aefcb14a4b86, type: 2}
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  imageChar: {fileID: 114908070875883184}
-  deadChar: {fileID: 114517987234001364}
+  - {fileID: 114215726790696442, guid: a232b796de45c4c169d24f760310ef18, type: 2}
+  weakness: 1
   lifeSlider: {fileID: 114985754815318968}
   manaSlider: {fileID: 114286773869486298}
+  imageChar: {fileID: 114908070875883184}
+  deadChar: {fileID: 114517987234001364}
 --- !u!114 &114517987234001364
 MonoBehaviour:
   m_ObjectHideFlags: 1

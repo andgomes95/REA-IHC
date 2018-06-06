@@ -332,11 +332,12 @@ MonoBehaviour:
   currentLife: 0
   totalMana: 10
   attacks:
-  - {fileID: 114954345572733070, guid: 968c331dfebd545408ce8a137411820b, type: 2}
-  imageChar: {fileID: 114148463858684848}
-  deadChar: {fileID: 114294395202457858}
+  - {fileID: 114060780591837864, guid: 6c76a708a8f0842c991b3397a3df4790, type: 2}
+  weakness: 1
   lifeSlider: {fileID: 114842754995842576}
   manaSlider: {fileID: 114601433030087108}
+  imageChar: {fileID: 114148463858684848}
+  deadChar: {fileID: 114294395202457858}
 --- !u!114 &114437916658843152
 MonoBehaviour:
   m_ObjectHideFlags: 1

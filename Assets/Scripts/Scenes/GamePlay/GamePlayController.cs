@@ -138,7 +138,11 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.ANIMATION_ATTACK:
 			//adicionar player animations
 			enemy = enemies [valueEnemy];
-			value = int.Parse (damageValue.text);
+			if(ApplicationController.attackToInt(damageValue.ToString()) == enemy.weakness){
+				value = int.Parse (damageValue.text)*5;
+			}else{
+				value = int.Parse (damageValue.text);
+			}
 			enemy.setCurrentLife (enemy.getCurrentLife () - value);
 			enemy.lifeSlider.value = enemy.getCurrentLife ();
 			if (enemy.getCurrentLife () <= 0) {
@@ -168,7 +172,12 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.ENEMY_TURN:
 			enemy = enemies [countAttack];
 			selectedAttack = enemy.attacks [0];
-			player.setCurrentLife (player.getCurrentLife () - int.Parse (selectedAttack.damageAttack.ToString ()));
+			if(ApplicationController.attackToInt(enemy.attacks[0].nameAttack) == player.weakness){
+				value = int.Parse (selectedAttack.damageAttack.ToString ())*5;
+			}else{
+				value = int.Parse (selectedAttack.damageAttack.ToString ());
+			}
+			player.setCurrentLife (player.getCurrentLife () - value);
 			player.lifeSlider.value = player.getCurrentLife ();
 			if (player.getCurrentLife () <= 0) {
 				players.Remove (player);
@@ -227,11 +236,11 @@ public class GamePlayController : MonoBehaviour {
 	public void SelectAttack(){
 		selectedAttack = player.attacks [attackList.value];
 		damageValue.text = selectedAttack.damageAttack.ToString ();
-		typeValue.text = selectedAttack.typeAttack.ToString ();
 		manaCostValue.text = selectedAttack.manaAttack.ToString ();
 	}
 	public void SelectEnemy(){
 		enemy = enemies [enemyList.value];
+		typeValue.text = ApplicationController.intToWeak(enemy.weakness).ToString();
 		valueEnemy = enemyList.value;
 	}
 	public List<Dropdown.OptionData> getEnemyNames(){

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 4}
-  m_MinSize: {x: 950, y: 521}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -67,10 +67,10 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 943
-  m_MinSize: {x: 234, y: 471}
-  m_MaxSize: {x: 10004, y: 14021}
+  m_MinSize: {x: 234, y: 492}
+  m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 47
+  controlID: 31
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 943
-  m_MinSize: {x: 711, y: 471}
-  m_MaxSize: {x: 18006, y: 14021}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 27
+  controlID: 11
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 24f7ffffa2f7ffff60f8ffff62f8ffffeef8ffff62f9ffff9efbffff00000000ba2f0000ce2f00001e3000003030000086310000
+    m_ExpandedIDs: 9efbffff000000003e2e0000522e0000c02e0000f22e0000a02f0000f22f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -468,7 +468,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 6c280000
     m_LastClickedID: 10348
-    m_ExpandedIDs: 000000007e270000882700002e2900003e2900006e2900007c29000090290000e22d0000f62d0000fa2d0000a62e0000a82e0000aa2e0000
+    m_ExpandedIDs: 000000007e27000088270000302900004229000072290000782900008229000096290000ea2d0000fe2d0000022e00006c3100006e31000070310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,21 +496,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e270000882700002e2900003e2900006e290000742900007c29000090290000e22d0000f62d0000fa2d0000a62e0000a82e0000aa2e0000
+    m_ExpandedIDs: 000000007e27000088270000302900004229000048290000722900008229000096290000ea2d0000fe2d0000022e00006c3100006e31000070310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GamePlayController
-      m_OriginalName: GamePlayController
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 2052
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -654,14 +654,14 @@ MonoBehaviour:
     width: 959
     height: 922
   m_SceneLighting: 1
-  lastFramingTime: 2461.410854101181
+  lastFramingTime: 1210.773078918457
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 51.98999, y: 605.1941, z: 5}
+    m_Target: {x: 663.4638, y: 45.877632, z: 0.10998739}
     speed: 2
-    m_Value: {x: 51.98999, y: 605.1941, z: 5}
+    m_Value: {x: 663.4638, y: 45.877632, z: 0.10998739}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -688,9 +688,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 93.87095
+    m_Target: 74.15561
     speed: 2
-    m_Value: 93.87095
+    m_Value: 74.15561
   m_Ortho:
     m_Target: 1
     speed: 2

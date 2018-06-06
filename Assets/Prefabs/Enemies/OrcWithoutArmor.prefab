@@ -238,15 +238,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalLife: 20
-  namePlayer: 
+  namePlayer: Orc
   currentLife: 20
   totalMana: 5
   attacks:
-  - {fileID: 114208862985196298, guid: c5d030dd0fb46440a923aefcb14a4b86, type: 2}
-  imageChar: {fileID: 114372535471588602}
-  deadChar: {fileID: 114109192358166984}
+  - {fileID: 114215726790696442, guid: a232b796de45c4c169d24f760310ef18, type: 2}
+  weakness: 0
   lifeSlider: {fileID: 114444960879577430}
   manaSlider: {fileID: 114664673673272704}
+  imageChar: {fileID: 114372535471588602}
+  deadChar: {fileID: 114109192358166984}
 --- !u!114 &114109192358166984
 MonoBehaviour:
   m_ObjectHideFlags: 1
