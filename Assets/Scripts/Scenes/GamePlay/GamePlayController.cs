@@ -33,6 +33,7 @@ public class GamePlayController : MonoBehaviour {
 	private AttackBase selectedAttack;
 	private int countTurn;
 	public int countAttack;
+	private int valueEnemy;
 	//UI
 	public GameObject battleUI;
 	public GameObject preBattleUI;
@@ -51,12 +52,8 @@ public class GamePlayController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		countAttack = 0;
-		enemy = enemies [0];
 		ChangeGameState (GameState.PRE_BATTLE);
 		ChangeBattleState (BattleState.WAITING);
-		Debug.Log (enemies[0]);
-		Debug.Log (enemies[1]);
-		Debug.Log (enemies[2]);
 
 	}
 	
@@ -132,6 +129,8 @@ public class GamePlayController : MonoBehaviour {
 			break;
 		case BattleState.ANIMATION_ATTACK:
 			//adicionar player animations
+			enemy = enemies [valueEnemy];
+			Debug.Log ("a" + valueEnemy);
 			value = int.Parse (damageValue.text);
 			enemy.setCurrentLife (enemy.getCurrentLife () - value);
 			enemy.lifeSlider.value = enemy.getCurrentLife ();
@@ -201,6 +200,7 @@ public class GamePlayController : MonoBehaviour {
 	public void SelectEnemy(){
 		if (countTurn == 0) {
 			enemy = enemies [enemyList.value];
+			valueEnemy = enemyList.value;
 		}
 	}
 	public List<Dropdown.OptionData> getEnemyNames(){
