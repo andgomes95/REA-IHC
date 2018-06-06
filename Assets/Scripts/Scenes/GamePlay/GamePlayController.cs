@@ -32,7 +32,8 @@ public class GamePlayController : MonoBehaviour {
 	private EnemyBehaviour enemy;
 	private AttackBase selectedAttack;
 	private int countTurn;
-	public int countAttack;
+	private int playersAlive;
+	private int countAttack;
 	private int valueEnemy;
 	//UI
 	public GameObject battleUI;
@@ -52,8 +53,16 @@ public class GamePlayController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		countAttack = 0;
+		countTurn = 2;
+		playersAlive = 2;
 		ChangeGameState (GameState.PRE_BATTLE);
 		ChangeBattleState (BattleState.WAITING);
+		foreach (EnemyBehaviour enemyText in enemies) {
+			enemyText.deadChar.enabled= false;
+		}
+		foreach (PlayerBehaviour playerText in players) {
+			playerText.deadChar.enabled= false;
+		}
 
 	}
 	
@@ -106,7 +115,6 @@ public class GamePlayController : MonoBehaviour {
 			attackSelectUI.SetActive (false);
 			break;
 		case GameState.BATTLE:
-			countTurn = 0;
 			preBattleUI.SetActive (false);
 			battleUI.SetActive (true);
 			ChangeBattleState (BattleState.YOUR_TURN);
@@ -130,12 +138,25 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.ANIMATION_ATTACK:
 			//adicionar player animations
 			enemy = enemies [valueEnemy];
-			Debug.Log ("a" + valueEnemy);
 			value = int.Parse (damageValue.text);
 			enemy.setCurrentLife (enemy.getCurrentLife () - value);
 			enemy.lifeSlider.value = enemy.getCurrentLife ();
-			Debug.Log (countAttack);
-			if (countAttack < 2) {
+			if (enemy.getCurrentLife () <= 0) {
+				enemies.Remove (enemy);
+				DestroyObject (enemy.lifeSlider,0);
+				DestroyObject (enemy.manaSlider, 0);
+				enemy.imageChar.enabled= false;
+				enemy.deadChar.enabled= true;
+				DestroyObject (enemy,0);
+				Debug.Log (enemies.Count);
+				countTurn = enemies.Count-1;
+				if (enemies.Count == 0) {
+					Debug.Log ("WIN");
+					SceneManager.LoadScene("MainMenu");
+				}
+
+			}
+			if (countAttack < playersAlive) {
 				countAttack = countAttack + 1;
 				ChangeBattleState (BattleState.YOUR_TURN);
 			} else {
@@ -149,7 +170,22 @@ public class GamePlayController : MonoBehaviour {
 			selectedAttack = enemy.attacks [0];
 			player.setCurrentLife (player.getCurrentLife () - int.Parse (selectedAttack.damageAttack.ToString ()));
 			player.lifeSlider.value = player.getCurrentLife ();
-			if (countAttack < 2) {
+			if (player.getCurrentLife () <= 0) {
+				players.Remove (player);
+				DestroyObject (player.lifeSlider,0);
+				DestroyObject (player.manaSlider, 0);
+				player.imageChar.enabled= false;
+				player.deadChar.enabled= true;
+				DestroyObject (player,0);
+				Debug.Log (players.Count);
+				playersAlive = players.Count-1;
+				if (players.Count == 0) {
+					Debug.Log ("LOSE");
+					SceneManager.LoadScene("MainMenu");
+				}
+
+			}
+			if (countAttack < countTurn) {
 				countAttack = countAttack + 1;
 				ChangeBattleState (BattleState.ENEMY_TURN);
 
@@ -170,7 +206,6 @@ public class GamePlayController : MonoBehaviour {
 		player = players [countAttack];
 		attackList.options = player.getAttackNames ();
 		enemyList.options = getEnemyNames ();
- 		Debug.Log (player.namePlayer.ToString ());
 		PlayerName.text = player.namePlayer.ToString();
 	}
 	public void openAttackSelection(){
@@ -190,22 +225,19 @@ public class GamePlayController : MonoBehaviour {
 
 	}
 	public void SelectAttack(){
-		if (countTurn == 0) {
-			selectedAttack = player.attacks [attackList.value];
-			damageValue.text = selectedAttack.damageAttack.ToString ();
-			typeValue.text = selectedAttack.typeAttack.ToString ();
-			manaCostValue.text = selectedAttack.manaAttack.ToString ();
-		}
+		selectedAttack = player.attacks [attackList.value];
+		damageValue.text = selectedAttack.damageAttack.ToString ();
+		typeValue.text = selectedAttack.typeAttack.ToString ();
+		manaCostValue.text = selectedAttack.manaAttack.ToString ();
 	}
 	public void SelectEnemy(){
-		if (countTurn == 0) {
-			enemy = enemies [enemyList.value];
-			valueEnemy = enemyList.value;
-		}
+		enemy = enemies [enemyList.value];
+		valueEnemy = enemyList.value;
 	}
 	public List<Dropdown.OptionData> getEnemyNames(){
 		List<Dropdown.OptionData> names = new List<Dropdown.OptionData> ();
 		foreach (EnemyBehaviour enemyText in enemies) {
+			enemyText.deadChar.enabled= false;
 			Dropdown.OptionData option = new Dropdown.OptionData ();
 			option.text = enemyText.name;
 			names.Add (option);

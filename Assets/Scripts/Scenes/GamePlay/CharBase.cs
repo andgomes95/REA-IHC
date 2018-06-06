@@ -9,6 +9,8 @@ public abstract class CharBase : MonoBehaviour {
 	public int totalMana;
 	private int currentMana;
 	public List<AttackBase> attacks;
+	public Image imageChar;
+	public Image deadChar;
 
 	//ui
 	public Slider lifeSlider;

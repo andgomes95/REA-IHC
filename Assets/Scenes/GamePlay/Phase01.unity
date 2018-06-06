@@ -324,7 +324,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135988268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -290.5, y: 114.94, z: 0}
+  m_LocalPosition: {x: -429, y: 207.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417699520}
@@ -568,7 +568,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190329898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 341, y: 227, z: 0}
+  m_LocalPosition: {x: 479.5, y: 319.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280388554}
@@ -1271,6 +1271,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1475721853428722, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
+      propertyPath: m_Name
+      value: OrcWithoutArmor2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
   m_IsPrefabParent: 0
@@ -1881,7 +1885,6 @@ MonoBehaviour:
   - {fileID: 740873084}
   - {fileID: 681642340}
   - {fileID: 1902384732}
-  countAttack: 0
   battleUI: {fileID: 1955518611}
   preBattleUI: {fileID: 1280388553}
   attackSelectUI: {fileID: 644217500}
@@ -1961,7 +1964,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999653232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 291, y: 114.42, z: 0}
+  m_LocalPosition: {x: 429.5, y: 206.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1510427196}
@@ -2533,7 +2536,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 953899720}
-        m_MethodName: SelectAttack
+        m_MethodName: SelectEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3511,6 +3514,10 @@ Prefab:
     - target: {fileID: 4052170205072828, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475721853428722, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
+      propertyPath: m_Name
+      value: OrcWithoutArmor1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
@@ -4528,7 +4535,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1955518611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35, y: -40.929993, z: -10}
+  m_LocalPosition: {x: 35, y: -133.43, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 699220605}
