@@ -324,7 +324,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135988268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -205, y: 57.940002, z: 0}
+  m_LocalPosition: {x: -290.5, y: 114.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417699520}
@@ -568,7 +568,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190329898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255.5, y: 170, z: 0}
+  m_LocalPosition: {x: 341, y: 227, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280388554}
@@ -1333,6 +1333,12 @@ RectTransform:
   m_AnchoredPosition: {x: 70, y: -11.7}
   m_SizeDelta: {x: 100, y: 76.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &681642340 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114032642190213074, guid: 3feec2a8360aa4ac985f24666488db05,
+    type: 2}
+  m_PrefabInternal: {fileID: 517316195}
+  m_Script: {fileID: 11500000, guid: 455ab5d61c82548af9f20fba2116963c, type: 3}
 --- !u!1 &699220604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1554,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameState: 1
   currentBattleState: 0
-  player: {fileID: 531813440}
-  enemy: {fileID: 740873084}
+  players:
+  - {fileID: 531813440}
+  - {fileID: 1184268178}
+  - {fileID: 1936096881}
+  enemies:
+  - {fileID: 740873084}
+  - {fileID: 681642340}
+  - {fileID: 1902384732}
+  countAttack: 0
   battleUI: {fileID: 1955518611}
   preBattleUI: {fileID: 1280388553}
   attackSelectUI: {fileID: 644217500}
@@ -1628,7 +1641,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999653232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 205.5, y: 57.42, z: 0}
+  m_LocalPosition: {x: 291, y: 114.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1510427196}
@@ -2119,6 +2132,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4126248946033718, guid: 9558e83c6cad34fa29af8004106564b5,
     type: 2}
   m_PrefabInternal: {fileID: 1773984591}
+--- !u!114 &1184268178 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114993777464708396, guid: 9558e83c6cad34fa29af8004106564b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1773984591}
+  m_Script: {fileID: 11500000, guid: e361f85a6f15a49ebb849e05cccc6bb4, type: 3}
 --- !u!1 &1204411808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3587,6 +3606,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890167941}
+--- !u!114 &1902384732 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114032642190213074, guid: 3feec2a8360aa4ac985f24666488db05,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160471276}
+  m_Script: {fileID: 11500000, guid: 455ab5d61c82548af9f20fba2116963c, type: 3}
+--- !u!114 &1936096881 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114383866611636006, guid: 5f8d01a29264048b6af2128aaea45aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 1998515010}
+  m_Script: {fileID: 11500000, guid: e361f85a6f15a49ebb849e05cccc6bb4, type: 3}
 --- !u!1 &1955518611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,7 +3640,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1955518611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35, y: 16.070007, z: -10}
+  m_LocalPosition: {x: 35, y: -40.929993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 699220605}

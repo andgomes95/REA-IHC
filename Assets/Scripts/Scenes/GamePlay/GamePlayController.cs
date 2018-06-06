@@ -43,6 +43,7 @@ public class GamePlayController : MonoBehaviour {
 
 	//AttackInfo
 	public Dropdown attackList;
+	public Dropdown enemyList;
 	public Text damageValue;
 	public Text typeValue;
 	public Text manaCostValue;
@@ -53,6 +54,9 @@ public class GamePlayController : MonoBehaviour {
 		enemy = enemies [0];
 		ChangeGameState (GameState.PRE_BATTLE);
 		ChangeBattleState (BattleState.WAITING);
+		Debug.Log (enemies[0]);
+		Debug.Log (enemies[1]);
+		Debug.Log (enemies[2]);
 
 	}
 	
@@ -166,6 +170,7 @@ public class GamePlayController : MonoBehaviour {
 	private void yourTurn (){
 		player = players [countAttack];
 		attackList.options = player.getAttackNames ();
+		enemyList.options = getEnemyNames ();
  		Debug.Log (player.namePlayer.ToString ());
 		PlayerName.text = player.namePlayer.ToString();
 	}
@@ -192,5 +197,19 @@ public class GamePlayController : MonoBehaviour {
 			typeValue.text = selectedAttack.typeAttack.ToString ();
 			manaCostValue.text = selectedAttack.manaAttack.ToString ();
 		}
+	}
+	public void SelectEnemy(){
+		if (countTurn == 0) {
+			enemy = enemies [enemyList.value];
+		}
+	}
+	public List<Dropdown.OptionData> getEnemyNames(){
+		List<Dropdown.OptionData> names = new List<Dropdown.OptionData> ();
+		foreach (EnemyBehaviour enemyText in enemies) {
+			Dropdown.OptionData option = new Dropdown.OptionData ();
+			option.text = enemyText.name;
+			names.Add (option);
+		}
+		return names;
 	}
 }
