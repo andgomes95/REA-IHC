@@ -138,7 +138,9 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.ANIMATION_ATTACK:
 			//adicionar player animations
 			enemy = enemies [valueEnemy];
-			if(ApplicationController.attackToInt(damageValue.ToString()) == enemy.weakness){
+			Debug.Log (ApplicationController.attackToInt(selectedAttack.nameAttack) +"/"+ enemy.weakness);
+			Debug.Log (selectedAttack.nameAttack);
+			if(ApplicationController.attackToInt(selectedAttack.nameAttack) == enemy.weakness){
 				value = int.Parse (damageValue.text)*5;
 			}else{
 				value = int.Parse (damageValue.text);
@@ -216,6 +218,9 @@ public class GamePlayController : MonoBehaviour {
 		attackList.options = player.getAttackNames ();
 		enemyList.options = getEnemyNames ();
 		PlayerName.text = player.namePlayer.ToString();
+		selectedAttack = player.attacks [attackList.value];
+		damageValue.text = selectedAttack.damageAttack.ToString ();
+		manaCostValue.text = selectedAttack.manaAttack.ToString ();
 	}
 	public void openAttackSelection(){
 		defenseSelectUI.SetActive (false);

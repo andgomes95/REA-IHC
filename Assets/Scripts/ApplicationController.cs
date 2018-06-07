@@ -31,7 +31,7 @@ public class ApplicationController : MonoBehaviour {
 	public static int attackToInt(string attack){
 		if (attack == "x")
 			return 0;
-		else if (attack == "x^2")
+		else if (attack == "x2")
 			return 1;
 		return 0;
 	}
