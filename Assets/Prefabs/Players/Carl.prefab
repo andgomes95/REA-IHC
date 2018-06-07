@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1166991131379242
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +327,9 @@ MonoBehaviour:
   totalMana: 10
   attacks:
   - {fileID: 114215726790696442, guid: a232b796de45c4c169d24f760310ef18, type: 2}
+  - {fileID: 114293528471928146, guid: 488a28fffe5c946a3be124e00bf1eb5a, type: 2}
+  - {fileID: 114932887305521712, guid: 9c983877b1b814e9d92709d15ae58013, type: 2}
+  - {fileID: 114577215599120110, guid: 917227cdc710d43768ac3ec789d6410b, type: 2}
   weakness: 1
   lifeSlider: {fileID: 114985754815318968}
   manaSlider: {fileID: 114286773869486298}
