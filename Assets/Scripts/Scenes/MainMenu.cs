@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void Play(){
-		SceneManager.LoadScene("PlayerSelect");
+		SceneManager.LoadScene("PhaseSelect");
 	}
 	public void Library(){
 		SceneManager.LoadScene ("Library");

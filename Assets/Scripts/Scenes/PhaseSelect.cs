@@ -16,7 +16,10 @@ public class PhaseSelect : MonoBehaviour {
 	}
 
 	public void BackPlayerSelect(){
-		SceneManager.LoadScene ("PlayerSelect");
+		SceneManager.LoadScene ("MainMenu");
+	}
+	public void goLibrary(){
+		SceneManager.LoadScene ("Library");
 	}
 	public void SelectPhase(int level){
 		ApplicationController.SetLevel (level);
