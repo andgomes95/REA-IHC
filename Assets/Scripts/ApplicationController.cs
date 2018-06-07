@@ -19,6 +19,18 @@ public class ApplicationController : MonoBehaviour {
 			return 0;
 		else if (weak == "2x")
 			return 1;
+		else if (weak == "3x2")
+			return 2;
+		else if (weak == "4x3")
+			return 3;
+		else if (weak == "cos(x)")
+			return 4;
+		else if (weak == "-sen(x)")
+			return 5;
+		else if (weak == "-cos(x)")
+			return 6;
+		else if (weak == "sen(x)")
+			return 7;
 		return 0;
 	}
 	public static string intToWeak(int num){
@@ -26,6 +38,18 @@ public class ApplicationController : MonoBehaviour {
 			return "Const";
 		else if (num == 1)
 			return "2x";
+		else if (num == 2)
+			return "3x2";
+		else if (num == 3)
+			return "4x3";
+		else if (num == 4)
+			return "cos(x)";
+		else if (num == 5)
+			return "-sen(x)";
+		else if (num == 6)
+			return "-cos(x)";
+		else if (num == 7)
+			return "sen(x)";
 		return "Const";
 	}
 	public static int attackToInt(string attack){
@@ -33,6 +57,18 @@ public class ApplicationController : MonoBehaviour {
 			return 0;
 		else if (attack == "x2")
 			return 1;
+		else if (attack == "x3")
+			return 2;
+		else if (attack == "x4")
+			return 3;
+		else if (attack == "sen(x)")
+			return 4;
+		else if (attack == "cos(x)")
+			return 5;
+		else if (attack == "-sen(x)")
+			return 6;
+		else if (attack == "-cos(x)")
+			return 7;
 		return 0;
 	}
 }

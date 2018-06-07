@@ -139,7 +139,6 @@ public class GamePlayController : MonoBehaviour {
 			//adicionar player animations
 			enemy = enemies [valueEnemy];
 			Debug.Log (ApplicationController.attackToInt(selectedAttack.nameAttack) +"/"+ enemy.weakness);
-			Debug.Log (selectedAttack.nameAttack);
 			if(ApplicationController.attackToInt(selectedAttack.nameAttack) == enemy.weakness){
 				value = int.Parse (damageValue.text)*5;
 			}else{
