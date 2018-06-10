@@ -228,6 +228,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4759962276388830, guid: 08e41751789c344c4a7afd8ca77a2a6a,
     type: 2}
   m_PrefabInternal: {fileID: 204305945}
+--- !u!114 &22367858 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114291545484577504, guid: 08e41751789c344c4a7afd8ca77a2a6a,
+    type: 2}
+  m_PrefabInternal: {fileID: 204305945}
+  m_Script: {fileID: 11500000, guid: e361f85a6f15a49ebb849e05cccc6bb4, type: 3}
 --- !u!1 &23908600
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,13 +542,13 @@ MonoBehaviour:
   currentGameState: 1
   currentBattleState: 0
   players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 22367858}
+  - {fileID: 1514752609}
+  - {fileID: 650261583}
   enemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1595007749}
+  - {fileID: 2062082289}
+  - {fileID: 684809470}
   battleUI: {fileID: 1348515425}
   preBattleUI: {fileID: 794643102}
   attackSelectUI: {fileID: 958558257}
@@ -1219,7 +1225,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: openAttackSelection
         m_Mode: 1
         m_Arguments:
@@ -1867,11 +1873,79 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603266453}
+--- !u!1 &625993578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 625993581}
+  - component: {fileID: 625993580}
+  - component: {fileID: 625993579}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &625993579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625993578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &625993580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625993578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &625993581
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625993578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &650261582 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4342389963173648, guid: 5f8d01a29264048b6af2128aaea45aca,
     type: 2}
   m_PrefabInternal: {fileID: 483252446}
+--- !u!114 &650261583 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114383866611636006, guid: 5f8d01a29264048b6af2128aaea45aca,
+    type: 2}
+  m_PrefabInternal: {fileID: 483252446}
+  m_Script: {fileID: 11500000, guid: e361f85a6f15a49ebb849e05cccc6bb4, type: 3}
 --- !u!1001 &657857539
 Prefab:
   m_ObjectHideFlags: 0
@@ -2062,7 +2136,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: wait
         m_Mode: 1
         m_Arguments:
@@ -2309,6 +2383,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4052170205072828, guid: 3feec2a8360aa4ac985f24666488db05,
     type: 2}
   m_PrefabInternal: {fileID: 657857539}
+--- !u!114 &684809470 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114032642190213074, guid: 3feec2a8360aa4ac985f24666488db05,
+    type: 2}
+  m_PrefabInternal: {fileID: 657857539}
+  m_Script: {fileID: 11500000, guid: 455ab5d61c82548af9f20fba2116963c, type: 3}
 --- !u!1 &696445184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,7 +3288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: StartBattle
         m_Mode: 1
         m_Arguments:
@@ -3486,7 +3566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: BackToPhaseSelect
         m_Mode: 1
         m_Arguments:
@@ -3983,7 +4063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1455765261
 Transform:
   m_ObjectHideFlags: 0
@@ -4298,7 +4378,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -4555,6 +4635,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4126248946033718, guid: 9558e83c6cad34fa29af8004106564b5,
     type: 2}
   m_PrefabInternal: {fileID: 460105587}
+--- !u!114 &1514752609 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114993777464708396, guid: 9558e83c6cad34fa29af8004106564b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 460105587}
+  m_Script: {fileID: 11500000, guid: e361f85a6f15a49ebb849e05cccc6bb4, type: 3}
 --- !u!1 &1519300873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,6 +5186,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4052170205072828, guid: 3feec2a8360aa4ac985f24666488db05,
     type: 2}
   m_PrefabInternal: {fileID: 2109653594}
+--- !u!114 &1595007749 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114032642190213074, guid: 3feec2a8360aa4ac985f24666488db05,
+    type: 2}
+  m_PrefabInternal: {fileID: 2109653594}
+  m_Script: {fileID: 11500000, guid: 455ab5d61c82548af9f20fba2116963c, type: 3}
 --- !u!1 &1607876900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5319,7 +5411,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: tryRun
         m_Mode: 1
         m_Arguments:
@@ -5645,7 +5737,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: repeatPhase
         m_Mode: 1
         m_Arguments:
@@ -5985,7 +6077,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 118151637}
         m_MethodName: attackConfirmationClick
         m_Mode: 1
         m_Arguments:
@@ -6513,6 +6605,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4052170205072828, guid: 3feec2a8360aa4ac985f24666488db05,
     type: 2}
   m_PrefabInternal: {fileID: 183610094}
+--- !u!114 &2062082289 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114032642190213074, guid: 3feec2a8360aa4ac985f24666488db05,
+    type: 2}
+  m_PrefabInternal: {fileID: 183610094}
+  m_Script: {fileID: 11500000, guid: 455ab5d61c82548af9f20fba2116963c, type: 3}
 --- !u!1001 &2109653594
 Prefab:
   m_ObjectHideFlags: 0
