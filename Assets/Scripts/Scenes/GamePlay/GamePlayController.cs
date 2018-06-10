@@ -41,7 +41,8 @@ public class GamePlayController : MonoBehaviour {
 	public GameObject attackSelectUI;
 	public GameObject defenseSelectUI;
 	public Text PlayerName;
-	public GameObject selectedPlayerPanel;
+	public TutorialController tutorial;
+	private int tutCount;
 
 	//AttackInfo
 	public Dropdown attackList;
@@ -55,6 +56,8 @@ public class GamePlayController : MonoBehaviour {
 		countAttack = 0;
 		countTurn = 2;
 		playersAlive = 2;
+		tutorial.tutorialNotAppears();
+		tutCount = 0;
 		ChangeGameState (GameState.PRE_BATTLE);
 		ChangeBattleState (BattleState.WAITING);
 		foreach (EnemyBehaviour enemyText in enemies) {
@@ -103,6 +106,8 @@ public class GamePlayController : MonoBehaviour {
 	}
 	public void StartBattle(){
 		ChangeGameState (GameState.BATTLE);
+		if (ApplicationController.GetLevel () == 1 && tutCount == 0)
+			tutorial.tutorialAppearsPrimary ();
 		ChangeBattleState (BattleState.YOUR_TURN);
 	}
 
@@ -210,6 +215,12 @@ public class GamePlayController : MonoBehaviour {
 
 	//Battle Actions
 	public void attackConfirmationClick (){
+		if (ApplicationController.GetLevel () == 1 && tutCount == 1){
+			tutorial.enemyDamageTutorial();
+			tutCount = tutCount+1;
+		}else {
+			tutorial.tutorialNotAppears();	
+		}
 		ChangeBattleState (BattleState.ANIMATION_ATTACK);
 	}
 	private void yourTurn (){
@@ -241,6 +252,10 @@ public class GamePlayController : MonoBehaviour {
 		selectedAttack = player.attacks [attackList.value];
 		damageValue.text = selectedAttack.damageAttack.ToString ();
 		manaCostValue.text = selectedAttack.manaAttack.ToString ();
+		if(ApplicationController.GetLevel() == 1 && tutCount == 0){
+			tutorial.tutorialAppearsAttack();
+			tutCount = tutCount+1;
+		}
 	}
 	public void SelectEnemy(){
 		enemy = enemies [enemyList.value];
