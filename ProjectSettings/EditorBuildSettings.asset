@@ -18,6 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Library.unity
     guid: 6fed93b4695704f479c23c3d657c73cd
   - enabled: 1
+    path: Assets/Scenes/Library/OrcLibrary.unity
+    guid: 4c4f545b909294586a00fad8cf7735bf
+  - enabled: 1
+    path: Assets/Scenes/Library/MaryLibrary.unity
+    guid: de02bbde6022d474898ba06525a97c30
+  - enabled: 1
+    path: Assets/Scenes/Library/JavierLibrary.unity
+    guid: 09cda29be0fb9446c9e0894c942e3d5a
+  - enabled: 1
+    path: Assets/Scenes/Library/CarlLibrary.unity
+    guid: 51525e9979e7a4877a380e97ea642d84
+  - enabled: 1
+    path: Assets/Scenes/Library/OrcWALibrary.unity
+    guid: 36b5fa58d64b04d42bae65d34fa233a8
+  - enabled: 1
     path: Assets/Scenes/Library/CharacterLibrary.unity
     guid: 6bdc473b959cb4aa8ba2c576a3d03d06
   - enabled: 1
