@@ -336,7 +336,7 @@ MonoBehaviour:
   - {fileID: 114203125041991240, guid: 314fa5a3ab2ba4a9a9bf4181978c3b94, type: 2}
   - {fileID: 114577215599120110, guid: 917227cdc710d43768ac3ec789d6410b, type: 2}
   - {fileID: 114293528471928146, guid: 488a28fffe5c946a3be124e00bf1eb5a, type: 2}
-  weakness: 1
+  weakness: 2
   lifeSlider: {fileID: 114842754995842576}
   manaSlider: {fileID: 114601433030087108}
   imageChar: {fileID: 114148463858684848}
