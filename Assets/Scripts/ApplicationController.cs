@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ApplicationController : MonoBehaviour {
 	private static int currentLevel;
+	private static int possibleLevel;
 	public static PlayerBehaviour player1;
 	public static PlayerBehaviour player2;
 	public static PlayerBehaviour player3;
-	//public List<PlayerBehaviour> players;
+	void Start(){
+		possibleLevel = 0;
+	}
 	public static void SetLevel(int level){
 		currentLevel = level;
 	}
@@ -70,5 +73,11 @@ public class ApplicationController : MonoBehaviour {
 		else if (attack == "-cos(x)")
 			return 7;
 		return 0;
+	}
+	public static void setLevelPossible(int level){
+		possibleLevel = level;
+	}
+	public static int getLevelPossible(){
+		return possibleLevel;
 	}
 }

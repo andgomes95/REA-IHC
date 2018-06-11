@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PhaseSelect : MonoBehaviour {
-
+	public GameObject buttonPhase02;
 	// Use this for initialization
 	void Start () {
-		
+		if (ApplicationController.getLevelPossible () < 1) {
+			buttonPhase02.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,10 @@ public class PhaseSelect : MonoBehaviour {
 	}
 	public void SelectPhase(int level){
 		ApplicationController.SetLevel (level);
-		SceneManager.LoadScene ("Phase01");
+		if(level == 1){
+			SceneManager.LoadScene ("Phase01");
+		}else if(level == 2 && ApplicationController.getLevelPossible() > 0){
+			SceneManager.LoadScene ("Phase02");
+		}
 	}
 }

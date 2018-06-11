@@ -129,6 +129,7 @@ public class GamePlayController : MonoBehaviour {
 			ChangeBattleState (BattleState.YOUR_TURN);
 			break;
 		case GameState.WIN:
+			ApplicationController.setLevelPossible (ApplicationController.GetLevel ());
 			preBattleUI.SetActive (false);
 			battleUI.SetActive (false);
 			winOrLoseUI.SetActive(true);
