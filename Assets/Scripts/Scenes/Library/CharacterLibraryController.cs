@@ -16,4 +16,13 @@ public class CharacterLibraryController : MonoBehaviour {
 	public void backToLibraryMenu(){
 		SceneManager.LoadScene ("Library");
 	}
+	public void goToJavierLibrary(){
+		SceneManager.LoadScene("JavierLibrary");
+	}
+	public void goToCarlLibrary(){
+		SceneManager.LoadScene("CarlLibrary");
+	}
+	public void goToMaryLibrary(){
+		SceneManager.LoadScene("MaryLibrary");
+	}
 }

@@ -16,4 +16,10 @@ public class MonsterLibraryController : MonoBehaviour {
 	public void backToLibraryMenu(){
 		SceneManager.LoadScene ("Library");
 	}
+	public void goToOrcLibrary(){
+		SceneManager.LoadScene("OrcLibrary");
+	}
+	public void goToOrcWALibrary(){
+		SceneManager.LoadScene("OrcWALibrary");
+	}
 }
