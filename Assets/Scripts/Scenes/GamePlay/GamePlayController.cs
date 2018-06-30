@@ -47,9 +47,8 @@ public class GamePlayController : MonoBehaviour {
 	public GameObject loseText;
 	private int tutCount;
 	public GameObject animationUI;
-	public Image enemyImage;
-	public Image playerImage;
-	public Animator enemyAnime;
+	public ImageAnimator enemyImage;
+	public ImageAnimator playerImage;
 
 	//AttackInfo
 	public Dropdown attackList;
@@ -268,9 +267,10 @@ public class GamePlayController : MonoBehaviour {
 			}
 			enemy.setCurrentLife (enemy.getCurrentLife () - value);
 			enemy.lifeSlider.value = enemy.getCurrentLife ();
-			playerImage.sprite = player.imageChar.sprite;
-			enemyAnime = enemy.anime;
-			enemyImage.sprite = enemy.imageChar.sprite;
+			playerImage.image.sprite = player.imageChar.sprite;
+			playerImage.anime.runtimeAnimatorController = player.anime.runtimeAnimatorController;
+			enemyImage.image.sprite = enemy.imageChar.sprite;
+			enemyImage.anime.runtimeAnimatorController = enemy.anime.runtimeAnimatorController;
 			animationUI.SetActive (true);
 			yield return new WaitForSeconds (3);
 			animationUI.SetActive (false);
@@ -321,8 +321,10 @@ public class GamePlayController : MonoBehaviour {
 			player.setCurrentLife (player.getCurrentLife () - value);
 			player.lifeSlider.value = player.getCurrentLife ();
 			animationUI.SetActive (true);
-			playerImage.sprite = player.imageChar.sprite;
-			enemyImage.sprite = enemy.imageChar.sprite;
+			playerImage.image.sprite = player.imageChar.sprite;
+			playerImage.anime.runtimeAnimatorController = player.anime.runtimeAnimatorController;
+			enemyImage.image.sprite = enemy.imageChar.sprite;
+			enemyImage.anime.runtimeAnimatorController = enemy.anime.runtimeAnimatorController;
 
 			yield return new WaitForSeconds (1);
 			animationUI.SetActive (false);

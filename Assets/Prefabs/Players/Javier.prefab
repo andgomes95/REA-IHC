@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 224646714941844858}
   - component: {fileID: 222957371902425052}
   - component: {fileID: 114573176211413824}
+  - component: {fileID: 95174003569238342}
   m_Layer: 0
   m_Name: PlayerImage
   m_TagString: Untagged
@@ -208,6 +209,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95174003569238342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843418693683848}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5e2ef290ed614e188aef4ceb97f1e8a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114017030526758844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,7 +368,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300042, guid: 8cec5e612953845a1aa8bc6f0280482f, type: 3}
+  m_Sprite: {fileID: 21300186, guid: 8cec5e612953845a1aa8bc6f0280482f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -487,6 +505,7 @@ MonoBehaviour:
   - {fileID: 114906064116550706, guid: e9db19e9e76424dc7b1e0a5dbce70033, type: 2}
   - {fileID: 114127761962449680, guid: 55ebd1df206fe4c35bfcea761515e55e, type: 2}
   weakness: 0
+  anime: {fileID: 95174003569238342}
   lifeSlider: {fileID: 114017030526758844}
   manaSlider: {fileID: 114298444403104570}
   imageChar: {fileID: 114573176211413824}

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ApplicationController.cs" />
+     <Compile Include="Assets\Scripts\ImageAnimator.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\AttackBase.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\CharBase.cs" />
      <Compile Include="Assets\Scripts\Scenes\GamePlay\EnemyBehaviour.cs" />

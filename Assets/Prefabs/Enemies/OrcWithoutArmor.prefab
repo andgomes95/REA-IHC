@@ -52,7 +52,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4052170205072828}
-  - component: {fileID: 95716776031256266}
   - component: {fileID: 114032642190213074}
   m_Layer: 0
   m_Name: OrcWithoutArmor
@@ -135,6 +134,7 @@ GameObject:
   - component: {fileID: 224072303611025804}
   - component: {fileID: 222065773788964238}
   - component: {fileID: 114372535471588602}
+  - component: {fileID: 95439875942356102}
   m_Layer: 0
   m_Name: EnemyImage
   m_TagString: Untagged
@@ -209,16 +209,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95716776031256266
+--- !u!95 &95439875942356102
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1475721853428722}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1718127899554670}
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f47113c0e4e941d9946ef3bf7a30463, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   attacks:
   - {fileID: 114215726790696442, guid: a232b796de45c4c169d24f760310ef18, type: 2}
   weakness: 0
+  anime: {fileID: 95439875942356102}
   lifeSlider: {fileID: 114444960879577430}
   manaSlider: {fileID: 114664673673272704}
   imageChar: {fileID: 114372535471588602}

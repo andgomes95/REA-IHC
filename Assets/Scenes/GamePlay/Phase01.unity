@@ -467,7 +467,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135988268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -290.5, y: 114.94, z: 0}
+  m_LocalPosition: {x: -233, y: 76.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417699520}
@@ -713,7 +713,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190329898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 341, y: 227, z: 0}
+  m_LocalPosition: {x: 283.5, y: 189, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280388554}
@@ -1423,6 +1423,8 @@ GameObject:
   - component: {fileID: 458030647}
   - component: {fileID: 458030649}
   - component: {fileID: 458030648}
+  - component: {fileID: 458030651}
+  - component: {fileID: 458030650}
   m_Layer: 5
   m_Name: PlayerImage
   m_TagString: Untagged
@@ -1481,6 +1483,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458030646}
+--- !u!114 &458030650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458030646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4e79778eb3e473aace661df9506266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 458030648}
+  anime: {fileID: 458030651}
+--- !u!95 &458030651
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458030646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &464975338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2453,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 830934914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9700012, y: 93.81502, z: 0}
+  m_LocalPosition: {x: -7.6246643, y: 96.15611, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489857132}
@@ -2584,9 +2616,8 @@ MonoBehaviour:
   winText: {fileID: 489857131}
   loseText: {fileID: 1063875081}
   animationUI: {fileID: 1793103825}
-  enemyImage: {fileID: 2103613998}
-  playerImage: {fileID: 458030648}
-  enemyAnime: {fileID: 2103614000}
+  enemyImage: {fileID: 2103614000}
+  playerImage: {fileID: 458030650}
   attackList: {fileID: 585982634}
   enemyList: {fileID: 1081970722}
   damageValue: {fileID: 416985195}
@@ -2660,7 +2691,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999653232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 291, y: 114.42, z: 0}
+  m_LocalPosition: {x: 233.5, y: 76.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1510427196}
@@ -3764,28 +3795,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4126248946033718, guid: 9558e83c6cad34fa29af8004106564b5,
     type: 2}
   m_PrefabInternal: {fileID: 1773984591}
---- !u!1 &1182415517 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1718127899554670, guid: 3feec2a8360aa4ac985f24666488db05,
-    type: 2}
-  m_PrefabInternal: {fileID: 1611964093}
---- !u!95 &1182415521
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1182415517}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd669ecada0d14657afe41fecbb736c4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1184268178 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114993777464708396, guid: 9558e83c6cad34fa29af8004106564b5,
@@ -4508,6 +4517,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95433356352460876, guid: 08e41751789c344c4a7afd8ca77a2a6a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08e41751789c344c4a7afd8ca77a2a6a, type: 2}
   m_IsPrefabParent: 0
@@ -4776,23 +4790,7 @@ Prefab:
       propertyPath: m_Name
       value: OrcWithoutArmor1
       objectReference: {fileID: 0}
-    - target: {fileID: 95716776031256266, guid: 3feec2a8360aa4ac985f24666488db05,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: fd669ecada0d14657afe41fecbb736c4, type: 2}
-    - target: {fileID: 1268356017305324, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114372535471588602, guid: 3feec2a8360aa4ac985f24666488db05,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300138, guid: 180d0a2b122f84ec7ae0008dea4010e9,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 95716776031256266, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3feec2a8360aa4ac985f24666488db05, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1622473043
@@ -5607,6 +5605,7 @@ GameObject:
   - component: {fileID: 1793103826}
   - component: {fileID: 1793103828}
   - component: {fileID: 1793103827}
+  - component: {fileID: 1793103829}
   m_Layer: 5
   m_Name: AnimationUI
   m_TagString: Untagged
@@ -5629,10 +5628,10 @@ RectTransform:
   m_Father: {fileID: 190329902}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.0000076294}
-  m_SizeDelta: {x: 682, y: 0}
+  m_SizeDelta: {x: 46, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1793103827
 MonoBehaviour:
@@ -5667,6 +5666,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793103825}
+--- !u!114 &1793103829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793103825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4e79778eb3e473aace661df9506266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  anime: {fileID: 0}
 --- !u!1 &1794651249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6240,7 +6252,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1955518611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35, y: -40.929993, z: -10}
+  m_LocalPosition: {x: 35, y: -2.9299927, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 699220605}
@@ -6909,6 +6921,7 @@ GameObject:
   - component: {fileID: 2103613999}
   - component: {fileID: 2103613998}
   - component: {fileID: 2103614000}
+  - component: {fileID: 2103614001}
   m_Layer: 5
   m_Name: EnemyImage
   m_TagString: Untagged
@@ -6923,7 +6936,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103613996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 257, y: 0, z: 0}
+  m_LocalPosition: {x: 222.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1793103826}
@@ -6967,7 +6980,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103613996}
---- !u!95 &2103614000
+--- !u!114 &2103614000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2103613996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4e79778eb3e473aace661df9506266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2103613998}
+  anime: {fileID: 2103614001}
+--- !u!95 &2103614001
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
