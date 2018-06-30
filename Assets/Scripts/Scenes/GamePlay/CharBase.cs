@@ -10,6 +10,7 @@ public abstract class CharBase : MonoBehaviour {
 	private int currentMana;
 	public List<AttackBase> attacks;
 	public int weakness;
+	public Animator anime;
 
 	//ui
 	public Slider lifeSlider;

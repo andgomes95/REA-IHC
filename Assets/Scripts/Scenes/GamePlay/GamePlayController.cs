@@ -46,6 +46,10 @@ public class GamePlayController : MonoBehaviour {
 	public GameObject winText;
 	public GameObject loseText;
 	private int tutCount;
+	public GameObject animationUI;
+	public Image enemyImage;
+	public Image playerImage;
+	public Animator enemyAnime;
 
 	//AttackInfo
 	public Dropdown attackList;
@@ -118,9 +122,10 @@ public class GamePlayController : MonoBehaviour {
 		switch (nextGameState) {
 		case GameState.PRE_BATTLE:
 			preBattleUI.SetActive (true);
-			winOrLoseUI.SetActive(false);
+			winOrLoseUI.SetActive (false);
 			battleUI.SetActive (false);
 			attackSelectUI.SetActive (false);
+			animationUI.SetActive (false);
 			break;
 		case GameState.BATTLE:
 			preBattleUI.SetActive (false);
@@ -151,88 +156,21 @@ public class GamePlayController : MonoBehaviour {
 		case BattleState.WAITING:
 			break;
 		case BattleState.YOUR_TURN:
+			preBattleUI.SetActive (false);
+			battleUI.SetActive (true);
+			winOrLoseUI.SetActive(false);
+			winOrLoseText(false);
 			yourTurn ();
 			break;
 		case BattleState.ANIMATION_ATTACK:
+			
+			StartCoroutine(Example ());
 			//adicionar player animations
-			if (enemies.Count > 0) {
-				enemy = enemies [valueEnemy];
-				if(ApplicationController.attackToInt(selectedAttack.nameAttack) == enemy.weakness){
-					value = int.Parse (damageValue.text)*5;
-				}else{
-					value = int.Parse (damageValue.text);
-				}
-				enemy.setCurrentLife (enemy.getCurrentLife () - value);
-				enemy.lifeSlider.value = enemy.getCurrentLife ();
-				if (enemy.getCurrentLife () <= 0) {
-					enemies.Remove (enemy);
-					DestroyObject (enemy.lifeSlider,0);
-					DestroyObject (enemy.manaSlider, 0);
-					enemy.imageChar.enabled= false;
-					enemy.deadChar.enabled= true;
-					DestroyObject (enemy,0);
-					countTurn = enemies.Count-1;
-					if (enemies.Count == 0) {
-						ChangeBattleState(BattleState.WAITING);
-						ChangeGameState(GameState.WIN);
-					}
 
-				}
-				if (countAttack < playersAlive) {
-					countAttack = countAttack + 1;
-					ChangeBattleState (BattleState.YOUR_TURN);
-				} else {
-					countAttack = 0;
-					ChangeBattleState (BattleState.ENEMY_TURN);
-				}
-			}else{
-				ChangeBattleState(BattleState.WAITING);
-				ChangeGameState(GameState.WIN);
-			}
-			enemyList.value = 0;
-			valueEnemy = 0;
 
 			break;
 		case BattleState.ENEMY_TURN:
-			if (players.Count > 0 && enemies.Count > 0) {
-				enemy = enemies [countAttack];
-				selectedAttack = enemy.attacks [0];
-				if (ApplicationController.attackToInt (enemy.attacks [0].nameAttack) == player.weakness) {
-					value = int.Parse (selectedAttack.damageAttack.ToString ()) * 5;
-				} else {
-					value = int.Parse (selectedAttack.damageAttack.ToString ());
-				}
-				player.setCurrentLife (player.getCurrentLife () - value);
-				player.lifeSlider.value = player.getCurrentLife ();
-				if (player.getCurrentLife () <= 0) {
-					players.Remove (player);
-					DestroyObject (player.lifeSlider, 0);
-					DestroyObject (player.manaSlider, 0);
-					player.imageChar.enabled = false;
-					player.deadChar.enabled = true;
-					DestroyObject (player, 0);
-					playersAlive = players.Count - 1;
-					if (players.Count == 0) {
-						ChangeBattleState (BattleState.WAITING);
-						ChangeGameState (GameState.LOSE);
-					}
-
-				}
-				if (countAttack < countTurn) {
-					countAttack = countAttack + 1;
-					ChangeBattleState (BattleState.ENEMY_TURN);
-
-				} else {
-					countAttack = 0;
-					ChangeBattleState (BattleState.YOUR_TURN);
-				}
-			}else if(enemies.Count > 0){
-				ChangeBattleState(BattleState.WAITING);
-				ChangeGameState(GameState.WIN);
-			}else if (players.Count == 0) {
-				ChangeBattleState(BattleState.WAITING);
-				ChangeGameState(GameState.LOSE);
-			}
+			StartCoroutine(EnemyTurn ());
 			break;
 		}
 	}
@@ -317,4 +255,110 @@ public class GamePlayController : MonoBehaviour {
 			loseText.SetActive(true);
 		}
 	}
+	private IEnumerator Example()
+	{
+		int value;
+		bool saiaDoIf =  false;
+		if (enemies.Count > 0) {
+			enemy = enemies [valueEnemy];
+			if (ApplicationController.attackToInt (selectedAttack.nameAttack) == enemy.weakness) {
+				value = int.Parse (damageValue.text) * 5;
+			} else {
+				value = int.Parse (damageValue.text);
+			}
+			enemy.setCurrentLife (enemy.getCurrentLife () - value);
+			enemy.lifeSlider.value = enemy.getCurrentLife ();
+			playerImage.sprite = player.imageChar.sprite;
+			enemyAnime = enemy.anime;
+			enemyImage.sprite = enemy.imageChar.sprite;
+			animationUI.SetActive (true);
+			yield return new WaitForSeconds (3);
+			animationUI.SetActive (false);
+			if (enemy.getCurrentLife () <= 0) {
+				enemies.Remove (enemy);
+				DestroyObject (enemy.lifeSlider, 0);
+				DestroyObject (enemy.manaSlider, 0);
+				enemy.imageChar.enabled = false;
+				enemy.deadChar.enabled = true;
+				DestroyObject (enemy, 0);
+				countTurn = enemies.Count - 1;
+				if (enemies.Count == 0) {
+					ChangeBattleState (BattleState.WAITING);
+					ChangeGameState (GameState.WIN);
+					saiaDoIf = true;
+				}
+
+			}
+			if (saiaDoIf != true) {
+				if (countAttack < playersAlive) {
+					countAttack = countAttack + 1;
+					ChangeBattleState (BattleState.YOUR_TURN);
+				} else {
+					countAttack = 0;
+					ChangeBattleState (BattleState.ENEMY_TURN);
+					preBattleUI.SetActive (false);
+					winOrLoseUI.SetActive (false);
+					winOrLoseText (false);
+				}
+			}
+		} else {
+			ChangeBattleState (BattleState.WAITING);
+			ChangeGameState (GameState.WIN);
+		}
+		enemyList.value = 0;
+		valueEnemy = 0;
+	}
+	private IEnumerator EnemyTurn(){
+		int value;
+		if (players.Count > 0 && enemies.Count > 0) {
+			enemy = enemies [countAttack];
+			selectedAttack = enemy.attacks [0];
+			if (ApplicationController.attackToInt (enemy.attacks [0].nameAttack) == player.weakness) {
+				value = int.Parse (selectedAttack.damageAttack.ToString ()) * 5;
+			} else {
+				value = int.Parse (selectedAttack.damageAttack.ToString ());
+			}
+			player.setCurrentLife (player.getCurrentLife () - value);
+			player.lifeSlider.value = player.getCurrentLife ();
+			animationUI.SetActive (true);
+			playerImage.sprite = player.imageChar.sprite;
+			enemyImage.sprite = enemy.imageChar.sprite;
+
+			yield return new WaitForSeconds (1);
+			animationUI.SetActive (false);
+			if (player.getCurrentLife () <= 0) {
+				players.Remove (player);
+				DestroyObject (player.lifeSlider, 0);
+				DestroyObject (player.manaSlider, 0);
+				player.imageChar.enabled = false;
+				player.deadChar.enabled = true;
+				DestroyObject (player, 0);
+				playersAlive = players.Count - 1;
+				if (players.Count == 0) {
+					ChangeBattleState (BattleState.WAITING);
+					ChangeGameState (GameState.LOSE);
+				}
+
+			}
+			if (countAttack < countTurn) {
+				countAttack = countAttack + 1;
+				ChangeBattleState (BattleState.ENEMY_TURN);
+
+			} else {
+				countAttack = 0;
+				ChangeBattleState (BattleState.YOUR_TURN);
+			}
+		}else if(enemies.Count > 0){
+			ChangeBattleState(BattleState.WAITING);
+			ChangeGameState(GameState.WIN);
+		}else if (players.Count == 0) {
+			ChangeBattleState(BattleState.WAITING);
+			ChangeGameState(GameState.LOSE);
+		}
+	}
+
+	//animationUI.SetActive (true);
+	//yield return new WaitForSeconds(5);
+	//animationUI.SetActive (false);
+	//battleUI.SetActive (true);
 }
