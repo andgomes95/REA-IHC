@@ -272,6 +272,7 @@ public class GamePlayController : MonoBehaviour {
 			enemyImage.image.sprite = enemy.imageChar.sprite;
 			enemyImage.anime.runtimeAnimatorController = enemy.anime.runtimeAnimatorController;
 			animationUI.SetActive (true);
+			playerImage.anime.SetBool("attack",true);
 			yield return new WaitForSeconds (3);
 			animationUI.SetActive (false);
 			if (enemy.getCurrentLife () <= 0) {
@@ -325,7 +326,7 @@ public class GamePlayController : MonoBehaviour {
 			playerImage.anime.runtimeAnimatorController = player.anime.runtimeAnimatorController;
 			enemyImage.image.sprite = enemy.imageChar.sprite;
 			enemyImage.anime.runtimeAnimatorController = enemy.anime.runtimeAnimatorController;
-
+			enemyImage.anime.SetBool("attack",true);
 			yield return new WaitForSeconds (1);
 			animationUI.SetActive (false);
 			if (player.getCurrentLife () <= 0) {
