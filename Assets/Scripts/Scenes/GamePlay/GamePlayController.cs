@@ -273,7 +273,7 @@ public class GamePlayController : MonoBehaviour {
 			enemyImage.anime.runtimeAnimatorController = enemy.anime.runtimeAnimatorController;
 			animationUI.SetActive (true);
 			playerImage.anime.SetBool("attack",true);
-			yield return new WaitForSeconds (3);
+			yield return new WaitForSeconds (1);
 			animationUI.SetActive (false);
 			if (enemy.getCurrentLife () <= 0) {
 				enemies.Remove (enemy);
@@ -360,8 +360,4 @@ public class GamePlayController : MonoBehaviour {
 		}
 	}
 
-	//animationUI.SetActive (true);
-	//yield return new WaitForSeconds(5);
-	//animationUI.SetActive (false);
-	//battleUI.SetActive (true);
 }
