@@ -270,7 +270,7 @@ MonoBehaviour:
   totalMana: 5
   attacks:
   - {fileID: 114215726790696442, guid: a232b796de45c4c169d24f760310ef18, type: 2}
-  weakness: 0
+  weakness: 2
   anime: {fileID: 95309223741163582}
   lifeSlider: {fileID: 114585891654100862}
   manaSlider: {fileID: 114679344538322190}
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1432212889193660}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -700,7 +700,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873946449104510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.779999, y: 4.2299995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4172659994360766}
@@ -708,8 +708,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 100}
+  m_AnchoredPosition: {x: -18.78, y: 4.23}
+  m_SizeDelta: {x: 117.56, y: 108.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224940539352383822
 RectTransform:

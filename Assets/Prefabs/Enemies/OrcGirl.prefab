@@ -474,7 +474,7 @@ MonoBehaviour:
   totalMana: 10
   attacks:
   - {fileID: 114060780591837864, guid: 6c76a708a8f0842c991b3397a3df4790, type: 2}
-  weakness: 1
+  weakness: 3
   anime: {fileID: 95384599127875458}
   lifeSlider: {fileID: 114316558543776440}
   manaSlider: {fileID: 114233221501644970}
